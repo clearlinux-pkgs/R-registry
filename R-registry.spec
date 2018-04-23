@@ -4,7 +4,7 @@
 #
 Name     : R-registry
 Version  : 0.5
-Release  : 2
+Release  : 3
 URL      : https://cran.r-project.org/src/contrib/registry_0.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/registry_0.5.tar.gz
 Summary  : Infrastructure for R Package Registries
