@@ -4,7 +4,7 @@
 #
 Name     : R-registry
 Version  : 0.5.1
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/registry_0.5-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/registry_0.5-1.tar.gz
 Summary  : Infrastructure for R Package Registries
@@ -23,10 +23,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551805060
+export SOURCE_DATE_EPOCH=1552785128
 
 %install
-export SOURCE_DATE_EPOCH=1551805060
+export SOURCE_DATE_EPOCH=1552785128
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -62,8 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library registry|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  registry || :
 
 
 %files
@@ -94,3 +93,4 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/registry/help/registry.rdx
 /usr/lib64/R/library/registry/html/00Index.html
 /usr/lib64/R/library/registry/html/R.css
+/usr/lib64/R/library/registry/tests/registry.R
